@@ -336,3 +336,22 @@ YouTube
 
 </body>
 </html>
+<!-- MÚSICA DE FONDO -->
+<div style="text-align:center; margin:20px;">
+<audio id="musicaCongregacion" controls autoplay loop>
+<source src="musica.mp3.mpeg" type="audio/mpeg">
+Tu navegador no soporta el audio.
+</audio>
+</div>
+
+<script>
+document.addEventListener("click", function () {
+const audio = document.getElementById("musicaCongregacion");
+if (audio.paused) {
+audio.play();
+}
+});
+</script>
+
+</body>
+</html>
