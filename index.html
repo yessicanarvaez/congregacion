@@ -1,297 +1,366 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Congregación Hebrea Monte Kadosh del Sinaí</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congregación Hebrea Monte Kadosh del Sinaí</title>
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #191b1a;
+            scroll-behavior: smooth;
+        }
 
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    color:#191b1a;
-    scroll-behavior:smooth;
-}
+        /* Fondo animado */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #6d82cf, #b9bfd1, #c6bae6, #a494d6);
+            animation: fondoAnimado 20s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+        }
 
-/* Fondo animado */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background: linear-gradient(45deg,#d9dbe2,#b9bfd1,#c6bae6,#a494d6);
-    animation: fondoAnimado 20s linear infinite;
-    z-index:-1;
-    opacity:0.5;
-}
+        @keyframes fondoAnimado {
+            0% {
+                transform: translate(-25%, -25%) rotate(0deg);
+            }
 
-@keyframes fondoAnimado{
-    0%{transform: translate(-25%, -25%) rotate(0deg);}
-    100%{transform: translate(-25%, -25%) rotate(360deg);}
-}
+            100% {
+                transform: translate(-25%, -25%) rotate(360deg);
+            }
+        }
 
-/* HEADER CON LOGO A LA IZQUIERDA */
-header{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    padding:40px 20px;
-    text-align:left;
-}
+        /* HEADER CON LOGO A LA IZQUIERDA */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            text-align: left;
+        }
 
-.logo{
-    width:230px;
-}
+        .logo {
+            width: 230px;
+        }
 
-/* MENÚ */
-nav{
-    background:rgb(31, 28, 30);
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    padding:15px;
-    position:sticky;
-    top:0;
-    box-shadow:0 3px 10px rgba(27, 17, 17, 0.1);
-    z-index:1000;
-}
+        /* MENÚ */
+        nav {
+            background: rgb(31, 28, 30);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 3px 10px rgba(27, 17, 17, 0.1);
+            z-index: 1000;
+        }
 
-nav a{
-    text-decoration:none;
-    font-weight:bold;
-    color:#333;
-    padding:10px 18px;
-    border-radius:12px;
-    border:2px solid #ce20b7;
-    background:#fff;
-    transition:0.3s;
-}
+        nav a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 2px solid #df6ccf;
+            background: #fff;
+            transition: 0.3s;
+        }
 
-nav a:hover{
-    background:#121316;
-    color:rgb(31, 157, 189);
-    transform:scale(1.08);
-}
+        nav a:hover {
+            background: #121316;
+            color: rgb(31, 157, 189);
+            transform: scale(1.08);
+        }
 
-/* SECCIONES */
-section{
-    padding:50px 20px;
-    text-align:center;
-}
+        /* SECCIONES */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-/* CUADRO LLAMATIVO CONGREGACIÓN */
-.cuadro{
-    background:linear-gradient(135deg,#a5a4d1,#e8f0ff);
-    max-width:900px;
-    margin:auto;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.25);
-    border:3px solid #4a6cf7;
-}
+        /* CUADRO LLAMATIVO CONGREGACIÓN */
+        .cuadro {
+            background: linear-gradient(135deg, #a5a4d1, #e8f0ff);
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 3px solid #4a6cf7;
+        }
 
-/* PARASHA DESTACADA */
-.parasha-box{
-    background:linear-gradient(135deg,#fff,#c0b8ec);
-    border:3px solid #7263b6;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
+        /* PARASHA DESTACADA */
+        .parasha-box {
+            background: linear-gradient(135deg, #fff, #c0b8ec);
+            border: 3px solid #7263b6;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
 
-/* TARJETAS ALIYOT */
-.tarjetas{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
+        /* TARJETAS ALIYOT */
+        .tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-.card{
-    background:linear-gradient(135deg,#34bfe9,#eaf2ff);
-    width:240px;
-    padding:20px;
-    border-radius:15px;
-    border:2px solid #4a6cf7;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
-}
+        .card {
+            background: linear-gradient(135deg, #34bfe9, #eaf2ff);
+            width: 240px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #4a6cf7;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
 
-.card:hover{
-    transform:translateY(-5px) scale(1.03);
-}
+        .card:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
 
-.card a{
-    text-decoration:none;
-    color:#333;
-    font-weight:bold;
-}
+        .card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
 
-/* BOTONES */
-.boton{
-    display:inline-block;
-    padding:12px 25px;
-    background:#9c97e2;
-    color:rgb(13, 14, 14);
-    text-decoration:none;
-    border-radius:10px;
-    margin-top:15px;
-}
+        .card {
+            text-align: center;
+            /* Centra todo el contenido */
+            background-color: #F9F9F9;
+            /* Fondo suave */
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
 
-.boton:hover{
-    background:#e451e4;
-}
 
-/* CONTACTO */
-.contacto{
-    background:linear-gradient(135deg,#6c96c5,#ffe6f2);
-    border:3px solid #4a6cf7;
-    padding:35px;
-    border-radius:20px;
-    max-width:700px;
-    margin:auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
 
-footer{
-    background:#c5c7d1;
-    color:rgb(70, 39, 207);
-    text-align:center;
-    padding:20px;
-}
+        /* Estilo para el título */
+        .card h3 {
+            color: #0f010c;
+            /* Dorado */
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
 
-</style>
+
+
+        /* Estilo para el párrafo */
+        .card p {
+            color: #100dc7ee;
+            /* Rojo oscuro */
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* BOTONES */
+        .boton {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #379ad3;
+            color: rgb(13, 14, 14);
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .boton:hover {
+            background: #685e68;
+        }
+
+        /* CONTACTO */
+        .contacto {
+            background: linear-gradient(135deg, #6c96c5, #ffe6f2);
+            border: 3px solid #4a6cf7;
+            padding: 35px;
+            border-radius: 20px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .haftara {
+            border: 2px solid #1b65bb;
+            /* color del borde */
+            background-color: #4859eb85;
+            /* color de fondo */
+            padding: 15px;
+            /* espacio interno */
+            border-radius: 8px;
+            /* esquinas redondeadas */
+            max-width: 400px;
+            /* ancho máximo de la caja */
+            margin: 20px auto;
+            /* centrado horizontal */
+            text-align: center;
+            /* centrar el texto */
+        }
+
+        footer {
+            background: #c5c7d1;
+            color: rgb(70, 39, 207);
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-<a href="#">Inicio</a>
-<a href="#congregacion">Congregación</a>
-<a href="#parasha">Parashá</a>
-<a href="#aliyot">Aliyot</a>
-<a href="#haftara">Haftara</a>
-<a href="#contacto">Contacto</a>
-</nav>
 
-<header>
-<img src="LOGO.jpeg" class="logo">
-<div>
-<h1 style="color:#6c78cf;">Congregación Hebrea Monte Kadosh del Sinaí</h1>
-<p>Estudio de la Torá y enseñanza de la Parashá semanal</p>
-</div>
-</header>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#congregacion">Congregación</a>
+        <a href="#parasha">Parashá</a>
+        <a href="#aliyot">Aliyot</a>
+        <a href="#haftara">Haftara</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-<section id="congregacion">
-<div class="cuadro">
-<h2>Sobre la Congregación</h2>
-<p>
-La Congregación Hebrea Monte Kadosh del Sinaí se dedica al estudio de la Torá,
-la enseñanza de la Parashá semanal y el fortalecimiento de la fe.
-Nuestro propósito es DARLE TODO EL HONOR Y TODA LA GLORIA AL SANTO BENDITO SEA,
-EN LOS MÉRITOS DEL BENDITO MASHIAJ YESHUA.
-</p>
-</div>
-</section>
+    <header>
+        <img src="LOGO.jpeg" class="logo">
+        <div>
 
-<section id="parasha">
-<div class="parasha-box">
-<h2>Parashá Semanal</h2>
+            <h1 style="color:#121213;">Congregación Hebrea Monte Kadosh del Sinaí</h1>
+            <p>Estudio de la Torá y enseñanza de la Parashá semanal</p>
+        </div>
+    </header>
 
-<h3>PARASHÁ TETZAVÉ</h3>
+    <section id="congregacion">
+        <div class="cuadro">
+            <h2>La Congregación Hebrea Monte Kadosh del Sinaí</h2>
+            <p>
+                Se dedica al estudio de la Torá, a la enseñanza de la Parashá semanal y al fortalecimiento de la fe
+                dentro de la comunidad. Nuestro propósito es honrar y dar toda la gloria al Santo, Bendito Sea,
+                reconociendo Su guía y misericordia en los méritos del bendito Mashiaj Yeshua.
 
-<p>
-Éxodo 27:20 – 30:10
-</p>
+                Trabajamos para crecer espiritualmente, promover la unidad entre los miembros y mantener viva la
+                enseñanza y el respeto por la Palabra, caminando conforme a la voluntad del Eterno.
 
-<p>
-En esta parashá se ordena preparar el aceite puro para la menorá,
-las vestiduras sagradas del sacerdote y la consagración de Aarón y sus hijos
-para el servicio en el Mishkán.
-</p>
+                MALAQUIAS:3:16 MATEO: 5:17
+            </p>
+        </div>
+    </section>
 
-</div>
-</section>
+    <section id="parasha">
+        <div class="parasha-box">
+            <h2>PARASHÁ TETZAVÉ</h2>
 
-<section id="Haftara">
-<h2></h2>
+            <p>
+                Éxodo 27:20 – 30:10
+            </p>
 
-<section id="Debarim 25:17-19-1 Samuel:15:2-34.">
-<h2>Lecturas de la Torá (Aliyot)</h2>
+            <p>
+                En esta parashá se ordena preparar el aceite puro para la menorá,
+                las vestiduras sagradas del sacerdote y la consagración de Aarón y sus hijos
+                para el servicio en el Mishkán.
+            </p>
 
-<div class="tarjetas">
+        </div>
+    </section>
+    <section id="haftara">
+        <div class="haftara">
+            <h2>HAFTARA</h2>
+            <p>
+                Debarim 25:17-19 — 1 Samuel 15:2-34
+            </p>
+        </div>
 
-<div class="card">
-<h3> 1 Aliya עלייה </h3> 
-<p> EXODO: 27:20</p>
-<a href="#">	כ: וְאַתָּ֞ה תְּצַוֶּ֣ה | אֶת־בְּנֵ֣י יִשְׂרָאֵ֗ל וְיִקְח֨וּ אֵלֶ֜יךָ שֶׁ֣מֶן זַ֥יִת זָ֛ךְ כָּתִ֖ית לַמָּא֑וֹר לְהַֽעֲלֹ֥ת נֵ֖ר תָּמִֽיד:</a>
-</div>
+        <h2 id="aliyot">Lecturas de la Torá (Aliyot)</h2>
 
-<div class="card">
-<h3> 2 Aliya  עלייה </h3>
- <p> EXODO: 28:13</p>
- <a href="#">יג: וְעָשִׂ֥יתָ מִשְׁבְּצֹ֖ת זָהָֽב</a>
-</div>
+        <div class="tarjetas">
 
-<div class="card">
-<h3> 3 Aliya  עלייה </h3>
- <p> EXODO: 28:31 </p>
-<a href="#">לא: וְעָשִׂ֛יתָ אֶת־מְעִ֥יל הָֽאֵפ֖וֹד כְּלִ֥יל תְּכֵֽלֶת</a>
-</div>
+            <div class="card">
+                <h3> 1 Aliya עלייה </h3>
+                <p> EXODO: 27:20</p>
+                <a href="#"> כ: וְאַתָּ֞ה תְּצַוֶּ֣ה | אֶת־בְּנֵ֣י יִשְׂרָאֵ֗ל וְיִקְח֨וּ אֵלֶ֜יךָ שֶׁ֣מֶן זַ֥יִת זָ֛ךְ
+                    כָּתִ֖ית לַמָּא֑וֹר לְהַֽעֲלֹ֥ת נֵ֖ר תָּמִֽיד:</a>
+            </div>
 
-<div class="card">
-<h3> 4 Aliya עלייה</h3>
- <p> EXODO: 29:1 </p>
-<a href="#">א: וְזֶ֨ה הַדָּבָ֜ר אֲשֶׁ֨ר תַּֽעֲשֶׂ֥ה לָהֶ֛ם לְקַדֵּ֥שׁ אֹתָ֖ם לְכַהֵ֣ן לִ֑י לְ֠קַ֠ח פַּ֣ר אֶחָ֧ד בֶּן־בָּקָ֛ר וְאֵילִ֥ם שְׁנַ֖יִם תְּמִימִֽם</a>
-</div>
+            <div class="card">
+                <h3> 2 Aliya עלייה </h3>
+                <p> EXODO: 28:13</p>
+                <a href="#">יג: וְעָשִׂ֥יתָ מִשְׁבְּצֹ֖ת זָהָֽב</a>
+            </div>
 
-<div class="card">
-<h3> 5 Aliya עלייה </h3>
- <p>EXODO: 29:19 </p>
-<a href="#">יט:וְלָ֣קַחְתָּ֔ אֵ֖ת הָאַ֣יִל הַשֵּׁנִ֑י וְסָמַ֨ךְ אַֽהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הָאָֽיִל</a>
-</div>
+            <div class="card">
+                <h3> 3 Aliya עלייה </h3>
+                <p> EXODO: 28:31 </p>
+                <a href="#">לא: וְעָשִׂ֛יתָ אֶת־מְעִ֥יל הָֽאֵפ֖וֹד כְּלִ֥יל תְּכֵֽלֶת</a>
+            </div>
 
-<div class="card">
-<h3> 6 Aliya עלייה </h3>
-<p> EXODO: 29:38</p>
-<a href="#">לח: וְזֶ֕ה אֲשֶׁ֥ר תַּֽעֲשֶׂ֖ה עַל־הַמִּזְבֵּ֑חַ כְּבָשִׂ֧ים בְּנֵֽי־שָׁנָ֛ה שְׁנַ֥יִם לַיּ֖וֹם תָּמִֽיד</a>
-</div>
+            <div class="card">
+                <h3> 4 Aliya עלייה</h3>
+                <p> EXODO: 29:1 </p>
+                <a href="#">א: וְזֶ֨ה הַדָּבָ֜ר אֲשֶׁ֨ר תַּֽעֲשֶׂ֥ה לָהֶ֛ם לְקַדֵּ֥שׁ אֹתָ֖ם לְכַהֵ֣ן לִ֑י לְ֠קַ֠ח פַּ֣ר
+                    אֶחָ֧ד בֶּן־בָּקָ֛ר וְאֵילִ֥ם שְׁנַ֖יִם תְּמִימִֽם</a>
+            </div>
 
-<div class="card">
-<h3> 7 Aliya עלייה </h3>
-<p> EXODO: 30:1 </p>
-<a href="#">א: וְעָשִׂ֥יתָ מִזְבֵּ֖חַ מִקְטַ֣ר קְטֹ֑רֶת עֲצֵ֥י שִׁטִּ֖ים תַּֽעֲשֶׂ֥ה אֹתֽוֹ</a>
-</div>
+            <div class="card">
+                <h3> 5 Aliya עלייה </h3>
+                <p>EXODO: 29:19 </p>
+                <a href="#">יט:וְלָ֣קַחְתָּ֔ אֵ֖ת הָאַ֣יִל הַשֵּׁנִ֑י וְסָמַ֨ךְ אַֽהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם
+                    עַל־רֹ֥אשׁ הָאָֽיִל</a>
+            </div>
+
+            <div class="card">
+                <h3> 6 Aliya עלייה </h3>
+                <p> EXODO: 29:38</p>
+                <a href="#">לח: וְזֶ֕ה אֲשֶׁ֥ר תַּֽעֲשֶׂ֖ה עַל־הַמִּזְבֵּ֑חַ כְּבָשִׂ֧ים בְּנֵֽי־שָׁנָ֛ה שְׁנַ֥יִם
+                    לַיּ֖וֹם תָּמִֽיד</a>
+            </div>
+
+            <div class="card">
+                <h3> 7 Aliya עלייה </h3>
+                <p> EXODO: 30:1 </p>
+                <a href="#">א: וְעָשִׂ֥יתָ מִזְבֵּ֖חַ מִקְטַ֣ר קְטֹ֑רֶת עֲצֵ֥י שִׁטִּ֖ים תַּֽעֲשֶׂ֥ה אֹתֽוֹ</a>
+            </div>
 
 
-</div>
-</section>
+        </div>
+    </section>
+    <section id="dias especiales">
+        <div class="dias especiales">
 
-<section id="contacto">
-<div class="contacto">
-<h2>Contacto</h2>
-<p>Síguenos en nuestras redes sociales.</p>
+            <section id="contacto">
+                <div class="contacto">
+                    <h2>Contacto</h2>
+                    <p>Síguenos en nuestras redes sociales.</p>
 
-<a class="boton" href="https://wa.me/TUNUMERO">WhatsApp</a>
-<br><br>
+                    <a class="boton" href="https://wa.me/TUNUMERO">WhatsApp</a>
+                    <br><br>
 
-<a class="boton" href="https://www.facebook.com/100067779811464/videos/congregaci%C3%B3n-hebrea-monte-kadosh-del-sina%C3%AD/2102407283885871/?rdid=LZqxiggI4HxWcgkf" target="_blank">
-Facebook
-</a>
+                    <a class="boton"
+                        href="https://www.facebook.com/100067779811464/videos/congregaci%C3%B3n-hebrea-monte-kadosh-del-sina%C3%AD/2102407283885871/?rdid=LZqxiggI4HxWcgkf"
+                        target="_blank">
+                        Facebook
+                    </a>
 
-<a class="boton" href="https://www.youtube.com/@congregacionhebreamontekad4880/" target="_blank">
-YouTube
-</a>
+                    <a class="boton" href="https://www.youtube.com/@congregacionhebreamontekad4880/" target="_blank">
+                        YouTube
+                    </a>
 
-</div>
-</section>
+                </div>
+            </section>
 
-<footer>
-© 2015 Congregación Hebrea Monte Kadosh del Sinaí
-</footer>
+            <footer>
+                © 2015 Congregación Hebrea Monte Kadosh del Sinaí
+            </footer>
 
 </body>
+
 </html>
