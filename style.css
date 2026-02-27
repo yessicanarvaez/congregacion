@@ -10,11 +10,30 @@ body{
     background-attachment: fixed;
 }
 
-/* MENÚ MEJORADO */
+/* LOGO CIRCULAR */
+.logo{
+    width:230px;
+    border-radius:50%;
+    border:4px solid #4a6cf7;
+    padding:5px;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:40px 20px;
+    text-align:left;
+}
+
+/* MENÚ */
 nav{
     background:white;
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
     gap:15px;
     padding:15px;
     position:sticky;
@@ -35,7 +54,7 @@ nav a{
     font-family:'Segoe UI', sans-serif;
 }
 
-/* efecto cuadrito */
+/* EFECTO DEL MENÚ */
 nav a:hover{
     background:#ff6fb5;
     color:white;
@@ -43,7 +62,13 @@ nav a:hover{
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* SECCIÓN SOBRE NOSOTROS MEJORADA */
+/* SECCIONES */
+section{
+    padding:50px 20px;
+    text-align:center;
+}
+
+/* SECCIÓN SOBRE NOSOTROS */
 .sobre{
     display:flex;
     justify-content:center;
@@ -76,4 +101,103 @@ nav a:hover{
     font-size:18px;
     line-height:1.7;
     font-family:'Segoe UI', sans-serif;
+}
+
+/* PARASHÁ */
+.parasha-box{
+    background:linear-gradient(135deg,#fff,#c0b8ec);
+    border:3px solid #7263b6;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    max-width:900px;
+    margin:auto;
+}
+
+/* TARJETAS */
+.tarjetas{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(135deg,#34bfe9,#eaf2ff);
+    width:240px;
+    padding:20px;
+    border-radius:15px;
+    border:2px solid #4a6cf7;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+.card h3{
+    color:#0f010c;
+    font-size:1.5em;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#100dc7ee;
+    font-size:1.2em;
+    margin:0;
+}
+
+.card a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+/* HAFTARA */
+.haftara{
+    border:2px solid #1b65bb;
+    background-color:#4859eb85;
+    padding:15px;
+    border-radius:8px;
+    max-width:400px;
+    margin:20px auto;
+    text-align:center;
+}
+
+/* BOTONES */
+.boton{
+    display:inline-block;
+    padding:12px 25px;
+    background:#379ad3;
+    color:rgb(13, 14, 14);
+    text-decoration:none;
+    border-radius:10px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#685e68;
+    color:white;
+}
+
+/* CONTACTO */
+.contacto{
+    background:linear-gradient(135deg,#6c96c5,#ffe6f2);
+    border:3px solid #4a6cf7;
+    padding:35px;
+    border-radius:20px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+    background:#c5c7d1;
+    color:rgb(70, 39, 207);
+    text-align:center;
+    padding:20px;
 }
